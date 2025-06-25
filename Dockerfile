@@ -6,7 +6,7 @@ WORKDIR /app
 RUN apt update && apt install -y curl tar python3
 
 # PaperMC'yi indir
-RUN curl -o paper.jar https://api.papermc.io/v2/projects/paper/versions/1.16.5/builds/792/downloads/paper-1.16.5-792.jar
+RUN curl -o paper.jar https://api.papermc.io/v2/projects/paper/versions/1.21.4/builds/232/downloads/paper-1.21.4-232.jar
 
 # EULA'yı kabul et
 RUN echo "eula=true" > eula.txt
