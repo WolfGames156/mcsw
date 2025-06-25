@@ -8,7 +8,10 @@ RUN curl -o paper.jar https://api.papermc.io/v2/projects/paper/versions/1.16.5/b
 
 RUN echo "eula=true" > eula.txt
 
-RUN curl -s https://playit.gg/install.sh | bash
+RUN curl -L -o playit.tar.gz https://github.com/playit-cloud/playit-agent/releases/latest/download/playit-linux-x64.tar.gz && \
+    tar -xzf playit.tar.gz && \
+    rm playit.tar.gz
+
 
 COPY start.sh .
 
