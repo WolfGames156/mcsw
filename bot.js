@@ -40,13 +40,15 @@ function createBot() {
   });
 
   bot.on('end', () => {
-    console.log('[!] Bağlantı kesildi. Yeniden bağlanılıyor...');
-    setTimeout(createBot, 5000);
-  });
+  console.log('[!] Bağlantı kesildi. Sunucu kapalı olabilir. 1 dakika sonra yeniden bağlanacak...');
+  setTimeout(createBot, 60000); // 1 dakika bekle, sonra tekrar bağlan
+});
 
-  bot.on('error', err => {
-    console.log('[!] Hata oluştu: ', err.message);
-  });
+bot.on('error', err => {
+  console.log(`[!] Hata: ${err.message}. 1 dakika sonra tekrar denenecek...`);
+  setTimeout(createBot, 60000);
+});
+
 }
 
 createBot();
