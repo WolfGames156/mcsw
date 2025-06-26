@@ -105,10 +105,10 @@ function createBot() {
 });
 
 
+let sayac = 1;
 
 function startMovement() {
   console.log('[🤖] Hareket başlatıldı (pathfinder ile).');
-  let sayac = 1;
   const mcData = require('minecraft-data')(bot.version);
   const defaultMove = new Movements(bot, mcData);
   bot.pathfinder.setMovements(defaultMove);
@@ -151,10 +151,10 @@ setInterval(() => {
   }
 }, 10000);
 
-  setInterval(randomWalk, 8000);
+  setInterval(randomWalk, 15000);
     moveInterval = setInterval(() => {
     lookAround(); 
-  }, 5000);
+  }, 7000);
 
 
 }
