@@ -115,9 +115,8 @@ function createBot() {
     cleanup();
     setTimeout(createBot, 60000);
   });
-}
 
-bot.on('error', err => {
+  bot.on('error', err => {
   console.log(`[!] Hata: ${err.message}`);
   if (err.message.includes('ECONNREFUSED') || err.message.includes('ECONNRESET')) {
     console.log('[!] Sunucu kapalı veya bağlantı reddedildi. 1 dakika sonra yeniden denenecek...');
@@ -125,6 +124,11 @@ bot.on('error', err => {
     setTimeout(createBot, 60000);
   }
 });
+
+
+}
+
+
 
 
 createBot();
